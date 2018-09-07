@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">小玩意</string>
+
+    <string name="title_home">安卓</string>
+    <string name="title_dashboard">Java</string>
+    <string name="title_notifications">应用层</string>
+    <string name="title_mine">我的</string>
+</resources>

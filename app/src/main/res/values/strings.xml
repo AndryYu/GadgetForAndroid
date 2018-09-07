@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">ManagerYouself</string>
+    <string name="app_name">GadgetForAndroid</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Android</string>
+    <string name="title_dashboard">Java</string>
+    <string name="title_notifications">FrameWork</string>
+    <string name="title_mine">Mine</string>
 </resources>
