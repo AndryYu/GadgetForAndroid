@@ -4,7 +4,6 @@ android {
     compileSdkVersion versions.compileSdk
 
 
-
     defaultConfig {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
@@ -26,5 +25,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation project(':baselibrary')
 }
