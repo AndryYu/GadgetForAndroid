@@ -3,8 +3,8 @@ package com.yufei.gadget.ui;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView(){
         if (fragmentManager == null) {
-            fragmentManager = getFragmentManager();
+            fragmentManager = getSupportFragmentManager();
         }
 
         mFrameList = new ArrayList<>();
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
      * <p>hideAllFragment</p>
      * @Description 隐藏全部fragment
      */
-    private void hideAllFragment(android.app.FragmentTransaction ft) {
+    private void hideAllFragment(FragmentTransaction ft) {
         for(BaseFragment fragment:mFrameList){
             ft.hide(fragment);
         }
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
      * @Description 显示被选中的fragment
      */
     private void selectFragment(BaseFragment fragment) {
-        android.app.FragmentTransaction ft = fragmentManager.beginTransaction();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
         hideAllFragment(ft);
         ft.show(fragment);
         ft.commit();

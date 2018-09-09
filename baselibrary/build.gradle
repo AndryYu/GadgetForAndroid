@@ -26,6 +26,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     api "com.android.support:appcompat-v7:${versions.supportLibrary}"
+    api "com.android.support:design:${versions.supportLibrary}"
     api "com.android.support.constraint:constraint-layout:${versions.constraintLayout}"
     //rxjava2 and rxandroid2
     api 'io.reactivex.rxjava2:rxandroid:2.0.2'
@@ -41,12 +42,10 @@ dependencies {
     //ConverterFactory的String依赖包
     api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
     api 'com.squareup.okhttp3:logging-interceptor:3.4.1'
-    //butterknife依赖
-    api 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //glide
     api 'com.github.bumptech.glide:glide:3.7.0'
-
+    //codeview
+    api 'thereisnospon.codeview:codeview:0.3.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
