@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.android.yufei.baselibrary.base.BaseFragment;
 import com.yufei.gadget.R;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private FrameWorkFragment mFWFragment;
     private MineFragment mMFragment;
 
-    private Toolbar mToolbar;
+    TextView tvHeader;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -37,15 +38,19 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
+                    tvHeader.setText("安卓");
                    selectFragment(mAFragment);
                     return true;
                 case R.id.navigation_dashboard:
+                    tvHeader.setText("Java");
                     selectFragment(mJFragment);
                     return true;
                 case R.id.navigation_notifications:
+                    tvHeader.setText("应用层");
                     selectFragment(mFWFragment);
                     return true;
                 case R.id.navigation_mine:
+                    tvHeader.setText("我的");
                     selectFragment(mMFragment);
                     return true;
             }
@@ -60,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
         initData();
+        initToolbar();
     }
 
     private void initView(){
@@ -72,6 +78,16 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation =  findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    private void initToolbar(){
+        Toolbar  mToolbar = findViewById(com.yufei.module.java.R.id.tl_java);
+        tvHeader = findViewById(com.yufei.module.java.R.id.tv_java_title);
+        setSupportActionBar(mToolbar);
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+        tvHeader.setText("安卓");
     }
 
     /**
