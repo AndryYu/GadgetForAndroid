@@ -3,17 +3,29 @@ package com.yufei.module.java;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.android.yufei.baselibrary.base.BaseFragment;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.android.FragmentEvent;
+import com.yufei.module.java.common.JConstants;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class JavaFragment extends BaseFragment {
+
+    RecyclerView mRVGrid;
+    private List<String> mGridList;
 
 
     @Override
@@ -25,13 +37,43 @@ public class JavaFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Button btnLog = view.findViewById(R.id.btn_alg);
-        btnLog.setOnClickListener(new View.OnClickListener() {
+        mRVGrid = view.findViewById(R.id.rv_grid);
+        //设置布局的方式
+        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(),2);
+        mRVGrid.setLayoutManager(layoutManager);
+
+        initData();
+
+        BaseQuickAdapter gridAdapter = new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_java_grid, mGridList) {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), JavaHomeActivity.class));
+            protected void convert(BaseViewHolder helper, String item) {
+                //调用赋值
+                helper.setText(R.id.tv_item, item);
+                helper.addOnClickListener(R.id.tv_item);
+            }
+        };
+        gridAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(getActivity(), JavaHomeActivity.class);
+                intent.putExtra(JConstants.KEY_GRID_POS, position);
+                startActivity(intent);
             }
         });
+        mRVGrid.setAdapter(gridAdapter);
+    }
+
+    private void initData(){
+        mGridList = new ArrayList<>();
+
+        mGridList.add("Java基础");
+        mGridList.add("Java进阶");
+        mGridList.add("Java线程知识点");
+        mGridList.add("Java虚拟机");
+        mGridList.add("23种设计模式");
+        mGridList.add("Java数据结构");
+        mGridList.add("Java基本算法");
+        mGridList.add("Java面试题");
     }
 
     @Override

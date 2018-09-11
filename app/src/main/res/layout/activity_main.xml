@@ -11,11 +11,7 @@
         android:id="@+id/layout_header"
         layout="@layout/layout_java_toolbar" />
 
-    <FrameLayout
-        android:id="@+id/message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_header" />
+
 
     <android.support.design.widget.BottomNavigationView
         app:labelVisibilityMode="labeled"
@@ -32,5 +28,12 @@
         app:itemIconTint="@drawable/status_main_menu"
         app:itemTextColor="@drawable/status_main_menu"
         app:menu="@menu/navigation" />
+
+    <FrameLayout
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/navigation"
+        android:layout_below="@+id/layout_header" />
 
 </RelativeLayout>

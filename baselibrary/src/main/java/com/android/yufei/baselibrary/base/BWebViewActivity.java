@@ -1,36 +1,35 @@
-package com.yufei.module.android;
+package com.android.yufei.baselibrary.base;
 
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
-import android.util.SparseArray;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-import com.android.yufei.baselibrary.base.BaseActivity;
-import com.yufei.module.android.common.AConstants;
+import com.android.yufei.baselibrary.R;
 
-public class AndroidActivity extends BaseActivity {
+import static com.android.yufei.baselibrary.common.BConstants.URL_KEY_BASE;
+
+public class BWebViewActivity extends BaseActivity {
 
     WebSettings webSettings;
     WebView mWebView;
     String url;
 
-
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_android);
+        setContentView(R.layout.activity_bweb_view);
 
-        url = getIntent().getStringExtra(AConstants.URL_KEY);
+        url = getIntent().getStringExtra(URL_KEY_BASE);
         initWebView();
         initToolBar();
     }
 
     private void initWebView(){
-        mWebView = findViewById(R.id.wv_home_android);
+        mWebView = findViewById(R.id.wv_base);
         webSettings = mWebView.getSettings();
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);//设置js可以直接打开窗口，如window.open()，默认为false
         webSettings.setJavaScriptEnabled(true);//是否允许执行js，默认为false。设置true时，会提醒可能造成XSS漏洞
