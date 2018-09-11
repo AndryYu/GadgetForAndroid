@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <include
-        android:id="@+id/layout_header"
-        layout="@layout/layout_java_toolbar" />
-
-
+    <FrameLayout
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/navigation"/>
 
     <android.support.design.widget.BottomNavigationView
         app:labelVisibilityMode="labeled"
@@ -29,11 +29,7 @@
         app:itemTextColor="@drawable/status_main_menu"
         app:menu="@menu/navigation" />
 
-    <FrameLayout
-        android:id="@+id/message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/navigation"
-        android:layout_below="@+id/layout_header" />
+
+        <!--android:layout_below="@+id/layout_header"-->
 
 </RelativeLayout>

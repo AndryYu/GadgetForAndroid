@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".JavaFragment">
+
+    <include
+        android:id="@+id/layout_header"
+        layout="@layout/layout_java_toolbar" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_grid"

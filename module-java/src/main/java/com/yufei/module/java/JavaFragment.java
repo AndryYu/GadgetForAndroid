@@ -3,13 +3,17 @@ package com.yufei.module.java;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.android.yufei.baselibrary.base.BaseFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -26,7 +30,7 @@ public class JavaFragment extends BaseFragment {
 
     RecyclerView mRVGrid;
     private List<String> mGridList;
-
+    TextView tvHeader;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,6 +46,7 @@ public class JavaFragment extends BaseFragment {
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(),2);
         mRVGrid.setLayoutManager(layoutManager);
 
+        initToolbar(view);
         initData();
 
         BaseQuickAdapter gridAdapter = new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_java_grid, mGridList) {
@@ -61,6 +66,18 @@ public class JavaFragment extends BaseFragment {
             }
         });
         mRVGrid.setAdapter(gridAdapter);
+    }
+
+
+    private void initToolbar(View view) {
+        Toolbar mToolbar = view.findViewById(R.id.tl_java);
+        tvHeader = view.findViewById(R.id.tv_java_title);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(mToolbar);
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        if(actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);
+        }
+        tvHeader.setText("Java");
     }
 
     private void initData(){

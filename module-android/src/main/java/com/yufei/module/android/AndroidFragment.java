@@ -2,17 +2,18 @@ package com.yufei.module.android;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.android.yufei.baselibrary.base.BaseFragment;
 import com.android.yufei.baselibrary.base.OnItemClickListener;
@@ -32,6 +33,8 @@ public class AndroidFragment extends BaseFragment {
     List<String> mList;
     SparseArray<String> mSArray;
 
+    TextView tvNative, tvHybrid;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,11 +44,13 @@ public class AndroidFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        rvGrid = view.findViewById(R.id.rv_grid);
+        //rvGrid = view.findViewById(R.id.rv_grid);
         rvList = view.findViewById(R.id.rv_list);
 
+        initToolbar(view);
         initRVData();
         initRecyclerView();
+
     }
 
     private void initRVData(){
@@ -70,6 +75,12 @@ public class AndroidFragment extends BaseFragment {
         mList.add("18.2018年Android面试题含答案--适合中高级（上）");
         mList.add("19.SharedPreference源码分析");
         mList.add("20.Glide-源码详解");
+        mList.add("21.WebView性能、体验分析与优化");
+        mList.add("22.Android WebView性能优化");
+        mList.add("23.23种设计模式全解析");
+        mList.add("24.深入理解Java类加载器(ClassLoader)");
+        mList.add("25.跟着例子一步步学习redux+react-redux");
+        mList.add("26.八大排序算法总结与java实现");
 
         mSArray = new SparseArray<>();
         mSArray.put(0, "https://www.jianshu.com/p/4f9591291365");
@@ -92,6 +103,12 @@ public class AndroidFragment extends BaseFragment {
         mSArray.put(17, "https://www.cnblogs.com/huangjialin/p/8657565.html");
         mSArray.put(18, "https://www.jianshu.com/p/1be4eb02f6a8");
         mSArray.put(19, "https://blog.csdn.net/yulyu/article/details/60331803");
+        mSArray.put(20, "https://mp.weixin.qq.com/s/-WceVvEKp8bKtIJQsD3Srw");
+        mSArray.put(21, "https://www.jianshu.com/p/c13eb7759c68");
+        mSArray.put(22, "https://www.cnblogs.com/geek6/p/3951677.html");
+        mSArray.put(23, "https://blog.csdn.net/javazejian/article/details/73413292");
+        mSArray.put(24, "https://segmentfault.com/a/1190000012976767");
+        mSArray.put(25, "https://blog.csdn.net/u010983881/article/details/76383527");
 
     }
 
@@ -113,6 +130,17 @@ public class AndroidFragment extends BaseFragment {
                 startActivity(intent);
             }
         });
+    }
+
+      private void initToolbar(View view){
+        Toolbar mToolbar = view.findViewById(R.id.tb_android);
+        tvNative = view.findViewById(R.id.tv_android_native);
+        tvHybrid = view.findViewById(R.id.tv_android_hybrid);
+          ((AppCompatActivity)getActivity()).setSupportActionBar(mToolbar);
+          ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        if(actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);
+        }
     }
 
     @Override
