@@ -81,6 +81,8 @@ public class AndroidFragment extends BaseFragment {
         mList.add("24.深入理解Java类加载器(ClassLoader)");
         mList.add("25.跟着例子一步步学习redux+react-redux");
         mList.add("26.八大排序算法总结与java实现");
+        mList.add("27.性能优化工具知识梳理");
+        mList.add("28.一个大神的简书文章目录");
 
         mSArray = new SparseArray<>();
         mSArray.put(0, "https://www.jianshu.com/p/4f9591291365");
@@ -109,6 +111,8 @@ public class AndroidFragment extends BaseFragment {
         mSArray.put(23, "https://blog.csdn.net/javazejian/article/details/73413292");
         mSArray.put(24, "https://segmentfault.com/a/1190000012976767");
         mSArray.put(25, "https://blog.csdn.net/u010983881/article/details/76383527");
+        mSArray.put(26, "https://www.jianshu.com/p/37c263f9886b");
+        mSArray.put(26, "https://www.jianshu.com/u/37baa8a86582");
 
     }
 

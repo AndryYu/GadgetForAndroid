@@ -57,53 +57,53 @@ public class AlgoListFragment extends BaseFragment {
         mModelMap = new HashMap<ExMenuModel, List<String>>();
 
         ExMenuModel item1 = new ExMenuModel();
-        item1.setName("Search");
+        item1.setName("查找算法（Search）");
         mModelList.add(item1);
 
         ExMenuModel item2 = new ExMenuModel();
-        item2.setName("Sorting");
+        item2.setName("排序算法（Sorting）");
         mModelList.add(item2);
 
         ExMenuModel item3 = new ExMenuModel();
-        item3.setName("Tree");
+        item3.setName("树（Tree）");
         mModelList.add(item3);
 
         ExMenuModel item4 = new ExMenuModel();
-        item4.setName("List");
+        item4.setName("列表（List）");
         mModelList.add(item4);
 
         ExMenuModel item5 = new ExMenuModel();
-        item5.setName("Graph");
+        item5.setName("图（Graph）");
         mModelList.add(item5);
 
         ExMenuModel item6 = new ExMenuModel();
-        item6.setName("Backtracking");
+        item6.setName("回溯算法（Backtracking）");
         mModelList.add(item6);
 
 
         List<String> heading1 = new ArrayList<>();
-        heading1.add("Binary search");
-        heading1.add("Linear Search");
+        heading1.add("1.二分查找（Binary search）");
+        heading1.add("2.线性查找（Linear Search）");
 
         List<String> heading2 = new ArrayList<String>();
-        heading2.add("Bubble Sort");
-        heading2.add("Insertion Sort");
-        heading2.add("Selection Sort");
-        heading2.add("Quicksort");
+        heading2.add("1.冒泡排序（Bubble Sort）");
+        heading2.add("2.插入排序（Insertion Sort）");
+        heading2.add("3.选择排序（Selection Sort）");
+        heading2.add("4.快速排序（Quicksort）");
 
         List<String> heading3 = new ArrayList<String>();
-        heading3.add("BST Search");
-        heading3.add("BST Insert");
+        heading3.add("1.二叉搜索树（BST Search）");
+        heading3.add("2.二叉插入树（BST Insert）");
 
         List<String> heading4 = new ArrayList<String>();
-        heading4.add("Linked List");
-        heading4.add("Stack");
+        heading4.add("1.Linked List");
+        heading4.add("2.堆（Stack）");
 
         List<String> heading5 = new ArrayList<String>();
-        heading5.add("BFS Traversal");
-        heading5.add("DFS Travsersal");
-        heading5.add("Dijkstra");
-        heading5.add("Bellman Ford");
+        heading5.add("1.广度优先遍历（BFS Traversal）");
+        heading5.add("2.深度优先遍历（DFS Travsersal）");
+        heading5.add("3.最短路径法（Dijkstra）");
+        heading5.add("4.Bellman Ford");
 
         List<String> heading6 = new ArrayList<String>();
         heading6.add("N Queens Problem");

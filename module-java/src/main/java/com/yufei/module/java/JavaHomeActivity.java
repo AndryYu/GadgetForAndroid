@@ -12,6 +12,7 @@ import com.android.yufei.baselibrary.base.BaseActivity;
 import com.android.yufei.baselibrary.base.BaseFragment;
 import com.yufei.module.java.common.JConstants;
 import com.yufei.module.java.module.algorithm.AlgoListFragment;
+import com.yufei.module.java.module.basicknowledge.BaseKledgeFragment;
 import com.yufei.module.java.module.interview.IViewListFragment;
 
 public class JavaHomeActivity extends BaseActivity {
@@ -23,10 +24,10 @@ public class JavaHomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_algo);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+       /* if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
             localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
-        }
+        }*/
 
         position = getIntent().getIntExtra(JConstants.KEY_GRID_POS, 0);
         initView();
@@ -48,6 +49,9 @@ public class JavaHomeActivity extends BaseActivity {
         BaseFragment showFragment = new AlgoListFragment();
         switch (position){
             case 0:
+                showFragment = new BaseKledgeFragment();
+                tvHeader.setText("Java基础知识");
+                break;
             case 1:
             case 2:
             case 3:
