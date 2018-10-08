@@ -6,7 +6,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity
-            android:name=".AndroidActivity" />
+        <activity android:name=".AndroidActivity" />
+        <activity android:name=".ui.act.ModuleListActivity"/>
+        <activity android:name=".ui.act.CategoryActivity"/>
     </application>
 </manifest>
