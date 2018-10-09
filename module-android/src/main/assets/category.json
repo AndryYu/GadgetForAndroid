@@ -1,0 +1,169 @@
+{
+  "data": [
+    {
+      "category": "基础",
+      "content": [
+        {
+          "sublevel": "activity"
+        },
+        {
+          "sublevel": "service"
+        },
+        {
+          "sublevel": "contentProvider"
+        },
+        {
+          "sublevel": "broadcastReceiver"
+        },
+        {
+          "sublevel": "handler"
+        }
+      ]
+    },
+    {
+      "category": "高级",
+      "content": [
+        {
+          "sublevel": "AsyncTask"
+        },
+        {
+          "sublevel": "进程保活"
+        },
+        {
+          "sublevel": "数据库升级"
+        }
+      ]
+    },
+    {
+      "category": "view",
+      "content": [
+        {
+          "sublevel": "拦截事件"
+        },
+        {
+          "sublevel": "View绘制机制"
+        },
+        {
+          "sublevel": "Material Design 控件"
+        },
+        {
+          "sublevel": "动画"
+        },
+        {
+          "sublevel": "Canvas&Paint "
+        }
+      ]
+    },
+    {
+      "category": "开源项目使用",
+      "content": [
+        {
+          "sublevel": "Rxjava2"
+        },
+        {
+          "sublevel": "Glide"
+        },
+        {
+          "sublevel": "OkHttp"
+        },
+        {
+          "sublevel": "Dagger2"
+        },
+        {
+          "sublevel": "Retrofit"
+        }
+      ]
+    },
+    {
+      "category": "源码解析",
+      "content": [
+        {
+          "sublevel": "Sharepreference"
+        },
+        {
+          "sublevel": "Eventbus"
+        },
+        {
+          "sublevel": "SQLiteOpenHelper"
+        }
+      ]
+    },
+    {
+      "category": "开发模式",
+      "content": [
+        {
+          "sublevel": "MVP"
+        },
+        {
+          "sublevel": "插件化开发"
+        },
+        {
+          "sublevel": "组件化开发"
+        }
+      ]
+    },
+    {
+      "category": "工具",
+      "content": [
+        {
+          "sublevel": "TraceView"
+        },
+        {
+          "sublevel": "Systrace"
+        },
+        {
+          "sublevel": "GPU"
+        },
+        {
+          "sublevel": "Hierarchy Viewer"
+        },
+        {
+          "sublevel": "MAT"
+        },
+        {
+          "sublevel": "Memory Monitor & Heap Viewer & Allocation Tracker"
+        },
+        {
+          "sublevel": "LeakCanary"
+        },
+        {
+          "sublevel": "Lint"
+        }
+      ]
+    },
+    {
+      "category": "性能优化",
+      "content": [
+        {
+          "sublevel": "如何避免OOM"
+        },
+        {
+          "sublevel": "布局优化"
+        },
+        {
+          "sublevel": "内存优化"
+        },
+        {
+          "sublevel": "卡顿问题"
+        }
+      ]
+    },
+    {
+      "category": "原生java运行机制",
+      "content": [
+        {
+          "sublevel": "内存区域"
+        },
+        {
+          "sublevel": "垃圾收集器与内存分配策略"
+        },
+        {
+          "sublevel": "类加载&对象实例化"
+        },
+        {
+          "sublevel": "Android虚拟机"
+        }
+      ]
+    }
+  ]
+}
