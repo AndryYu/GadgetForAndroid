@@ -1,5 +1,6 @@
 package com.yufei.module.android.ui.act;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,10 +10,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.android.yufei.baselibrary.base.BaseActivity;
+import com.android.yufei.baselibrary.utils.AssetUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.yufei.module.android.R;
+import com.yufei.module.android.common.AConstants;
 import com.yufei.module.android.entity.CategoryEntity;
 
 import java.io.BufferedReader;
@@ -40,7 +43,7 @@ public class CategoryActivity extends BaseActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(CategoryActivity.this, LinearLayoutManager.VERTICAL, false));
         BaseQuickAdapter adapter = new BaseQuickAdapter<CategoryEntity.Category, BaseViewHolder>(R.layout.layout_item_category, mList) {
             @Override
-            protected void convert(BaseViewHolder helper, CategoryEntity.Category item) {
+            protected void convert(BaseViewHolder helper, final CategoryEntity.Category item) {
                 //调用赋值
                 helper.setText(R.id.tv_category_title, item.getCategory());
                 View view = helper.itemView;
@@ -53,8 +56,18 @@ public class CategoryActivity extends BaseActivity {
                     protected void convert(BaseViewHolder helper, CategoryEntity.Category.Sublevel item) {
                         //调用赋值
                         helper.setText(R.id.tv_item, item.getSublevel());
+                        helper.addOnClickListener(R.id.tv_item);
                     }
                 };
+                suAdapter.setOnItemChildClickListener(new OnItemChildClickListener() {
+                    @Override
+                    public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                        Intent intent = new Intent(CategoryActivity.this, ModuleListActivity.class);
+                        CategoryEntity.Category.Sublevel sublevel = item.getContent().get(position);
+                        intent.putExtra(AConstants.KEY_MODULE_CONTENT, sublevel);
+                        startActivity(intent);
+                    }
+                });
                 subRecyclerView.setAdapter(suAdapter);
             }
         };
@@ -62,28 +75,11 @@ public class CategoryActivity extends BaseActivity {
     }
 
     private void initRVData(){
-        String category = getJson("category.json");
+        String category = AssetUtils.getJson(CategoryActivity.this, "category.json");
         Gson gson = new Gson();
         CategoryEntity entity = gson.fromJson(category, CategoryEntity.class);
         mList = entity.getData();
     }
 
-    public  String getJson(String fileName) {
-        //将json数据变成字符串
-        StringBuilder stringBuilder = new StringBuilder();
-        try {
-            //获取assets资源管理器
-            AssetManager assetManager = getAssets();
-            //通过管理器打开文件并读取
-            BufferedReader bf = new BufferedReader(new InputStreamReader(
-                    assetManager.open(fileName)));
-            String line;
-            while ((line = bf.readLine()) != null) {
-                stringBuilder.append(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return stringBuilder.toString();
-    }
+
 }

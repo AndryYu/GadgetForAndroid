@@ -1,0 +1,97 @@
+{
+  "category": "首页",
+  "content": [
+    {
+      "sublevel": "Java&Android",
+      "data":[
+        {"title":"Java&Android 基础知识梳理(1) - 注解","url":"https://www.jianshu.com/p/2585d2a7cd97"},
+        {"title":"Java&Android 基础知识梳理(2) - 序列化","url":"https://www.jianshu.com/p/4cda60d02c42"},
+        {"title":"Java&Android 基础知识梳理(3) - 内存区域","url":"https://www.jianshu.com/p/bc530b038171"},
+        {"title":"Java&Android 基础知识梳理(4) - 垃圾收集器与内存分配策略","url":"https://www.jianshu.com/p/3fa3172cf9e1"},
+        {"title":"Java&Android 基础知识梳理(5) - 类加载&对象实例化","url":"https://www.jianshu.com/p/e1e00bbf29dc"},
+        {"title":"Java&Android 基础知识梳理(6) - 字节输入输出流","url":"https://www.jianshu.com/p/3662fab6eb1e"},
+        {"title":"Java&Android 基础知识梳理(7) - Android 虚拟机","url":"https://www.jianshu.com/p/6224353197fd"},
+        {"title":"Java&Android 基础知识梳理(8) - 容器类","url":"https://www.jianshu.com/p/a8d5d38c6716"},
+        {"title":"Java&Android 基础知识梳理(9) - LruCache 源码解析","url":"https://www.jianshu.com/p/7d0522e97fc2"},
+        {"title":"JJava&Android 基础知识梳理(10) - SparseArray 源码解析","url":"https://www.jianshu.com/p/b774600904d4"},
+        {"title":"Java&Android 基础知识梳理(11) - 浅拷贝 Vs 深拷贝","url":"https://www.jianshu.com/p/316a2a788007"}
+      ]
+    },
+    {
+      "sublevel": "View绘制机制",
+      "data":[
+        {"title":"View 绘制体系知识梳理(1) - LayoutInflater#inflate 源码解析","url":"https://www.jianshu.com/p/49fca4c06eff"},
+        {"title":"View 绘制体系知识梳理(2) - setContentView 源码解析","url":"https://www.jianshu.com/p/ee98bab25fdf"},
+        {"title":"View 绘制体系知识梳理(3) - 绘制流程之 Measure 详解","url":"https://www.jianshu.com/p/8bfdeaf01661"},
+        {"title":"View 绘制体系知识梳理(4) - 绘制过程之 Layout 详解","url":"https://www.jianshu.com/p/6b8c99dd2dd6"},
+        {"title":"View 绘制体系知识梳理(5) - 绘制过程之 Draw 详解","url":"https://www.jianshu.com/p/531804c77247"},
+        {"title":"View 绘制体系知识梳理(6) - 绘制过程之 requestLayout 和 invalidate 详解","url":"https://www.jianshu.com/p/566fe6a44502"},
+        {"title":"View 绘制体系知识梳理(7) - getMeasuredWidth 和 getWidth 的区别","url":"https://www.jianshu.com/p/0df86968d611"},
+        {"title":"View 绘制体系知识梳理(8) - obtainStyledAttributes 详解","url":"https://www.jianshu.com/p/a70d0c249427"}
+      ]
+    },
+    {"sublevel": "Material Design 控件",
+      "data":[
+        {"title":"Material Design 控件知识梳理(1) - Android Design Support Library 是什么","url":"https://www.jianshu.com/p/32b2638a1785"},
+        {"title":"Material Design 控件知识梳理(2) - AppBarLayout & CollapsingToolbarLayout","url":"https://www.jianshu.com/p/d4fd636d7c44"},
+        {"title":"Material Design 控件知识梳理(3) - BottomSheet && BottomSheetDialog && BottomSheetDialogFragment","url":"https://www.jianshu.com/p/2a5be29123e5"},
+        {"title":"Material Design 控件知识梳理(4) - FloatingActionButton","url":"https://www.jianshu.com/p/5a354e318019"},
+        {"title":"Material Design 控件知识梳理(5) - DrawerLayout && NavigationView","url":"https://www.jianshu.com/p/d70cfd724c7f"},
+        {"title":"Material Design 控件知识梳理(6) - Snackbar","url":"https://www.jianshu.com/p/6aea94f9ae2f"},
+        {"title":"Material Design 控件知识梳理(7) - BottomNavigationBar","url":"https://www.jianshu.com/p/22ec4fc1cb71"},
+        {"title":"Material Design 控件知识梳理(8) - TabLayout","url":"https://www.jianshu.com/p/5dd04fda13ab"},
+        {"title":"Material Design 控件知识梳理(9) - TextInputLayout","url":"https://www.jianshu.com/p/22ec4fc1cb71"}
+      ]
+    },
+    {
+      "sublevel": "Rxjava2",
+      "data":[
+        {"title":"RxJava2 实战知识梳理(1) - 后台执行耗时操作，实时通知 UI 更新","url":"https://www.jianshu.com/p/c935d0860186"},
+        {"title":"RxJava2 实战知识梳理(2) - 计算一段时间内数据的平均值","url":"https://www.jianshu.com/p/5dd01b14c02a"},
+        {"title":"RxJava2 实战知识梳理(3) - 优化搜索联想功能","url":"https://www.jianshu.com/p/7995497baff5"},
+        {"title":"RxJava2 实战知识梳理(4) - 结合 Retrofit 请求新闻资讯","url":"https://www.jianshu.com/p/74f46ae1fabb"},
+        {"title":"RxJava2 实战知识梳理(5) - 简单及进阶的轮询操作","url":"https://www.jianshu.com/p/fa1828d70192"},
+        {"title":"RxJava2 实战知识梳理(6) - 基于错误类型的重试请求","url":"https://www.jianshu.com/p/d135f19e045c"},
+        {"title":"RxJava2 实战知识梳理(7) - 基于 combineLatest 实现的输入表单验证","url":"https://www.jianshu.com/p/25682d620320"},
+        {"title":"RxJava2 实战知识梳理(8) - 使用 publish + merge 优化先加载缓存，再读取网络数据的请求过程","url":"https://www.jianshu.com/p/dfc11118b70b"},
+        {"title":"RxJava2 实战知识梳理(9) - 使用 timer/interval/delay 实现任务调度","url":"https://www.jianshu.com/p/6db5d213c9c6"},
+        {"title":"RxJava2 实战知识梳理(10) - 屏幕旋转导致 Activity 重建时恢复任务","url":"https://www.jianshu.com/p/1d09bc2c463a"},
+        {"title":"RxJava2 实战知识梳理(11) - 检测网络状态并自动重试请求","url":"https://www.jianshu.com/p/f00d9c51b65e"},
+        {"title":"RxJava2 实战知识梳理(12) - 实战讲解 publish & replay & share & refCount & autoConnect","url":"https://www.jianshu.com/p/575ce5b98389"},
+        {"title":"RxJava2 实战知识梳理(13) - 如何使得错误发生时不自动停止订阅关系","url":"https://www.jianshu.com/p/c5486ecbf230"},
+        {"title":"RxJava2 实战知识梳理(14) - 在 token 过期时，刷新过期 token 并重新发起请求","url":"https://www.jianshu.com/p/e88e61e1a721"},
+        {"title":"RxJava2 实战知识梳理(15) - 实现一个简单的 MVP + RxJava + Retrofit 应用","url":"https://www.jianshu.com/p/c6e711182430"}
+      ]
+    },
+    {
+      "sublevel": "图片知识基础",
+      "data":[
+        {"title":"图片基础知识梳理(1) - ImageView 的 ScaleType 属性解析","url":"https://www.jianshu.com/p/e046b4201289"},
+        {"title":"图片基础知识梳理(2) - Bitmap 占用内存分析","url":"https://www.jianshu.com/p/56d7ca26b3b6"},
+        {"title":"图片基础知识梳理(3) - Bitmap&BitmapFactory 解析","url":"https://www.jianshu.com/p/abc756158cf6"}
+      ]
+    },
+    {
+      "sublevel": "recyclerView",
+      "data":[
+        {"title":"RecyclerView 知识梳理(1) - 综述","url":"https://www.jianshu.com/p/21a1384df9a1"},
+        {"title":"RecyclerView 知识梳理(2) - Adapter","url":"https://www.jianshu.com/p/ec6585e5220d"},
+        {"title":"RecyclerView 知识梳理(3) - LayoutManager","url":"https://www.jianshu.com/p/1cfca4d34402"},
+        {"title":"RecyclerView 知识梳理(4) - ItemDecoration","url":"https://www.jianshu.com/p/b2ef4f8e859f"},
+        {"title":"RecyclerView 知识梳理(5) - ItemTouchHelper","url":"https://www.jianshu.com/p/0bbc44cc1582"}
+      ]
+    },{
+      "sublevel": "组件化开发",
+      "data":[
+        {"title":"组件化知识梳理(1) - Arouter 的基本使用","url":"https://www.jianshu.com/p/5c109c51d7ba"},
+        {"title":"组件化知识梳理(2) - Arouter 源码分析之 Complier SDK","url":"https://www.jianshu.com/p/a1f6db686b17"},
+        {"title":"组件化知识梳理(3) - Arouter 源码分析之运行时 SDK","url":"https://www.jianshu.com/p/a662c0b8edd2"},
+        {"title":"组件化知识梳理(4) - IOC & AOP 思想在 Arouter 中的应用","url":"https://www.jianshu.com/p/0aacf897f7b3"}
+      ]
+    },{
+      "sublevel": "其他更多",
+      "data":[
+      ]
+    }
+  ]
+}

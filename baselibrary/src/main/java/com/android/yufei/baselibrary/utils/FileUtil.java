@@ -1,4 +1,4 @@
-package com.android.yufei.baselibrary.common.utils;
+package com.android.yufei.baselibrary.utils;
 
 import android.content.Context;
 import android.text.TextUtils;

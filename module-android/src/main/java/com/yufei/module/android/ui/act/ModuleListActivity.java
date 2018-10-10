@@ -2,6 +2,7 @@ package com.yufei.module.android.ui.act;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -9,13 +10,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.SparseArray;
+import android.view.View;
 import android.widget.TextView;
 
 import com.android.yufei.baselibrary.base.BaseActivity;
 import com.android.yufei.baselibrary.base.OnItemClickListener;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.yufei.module.android.AndroidActivity;
 import com.yufei.module.android.R;
 import com.yufei.module.android.common.AConstants;
+import com.yufei.module.android.entity.CategoryEntity;
+import com.yufei.module.android.entity.DetailEntity;
 import com.yufei.module.android.ui.adapter.MyAdapter;
 
 import java.util.ArrayList;
@@ -25,17 +31,18 @@ public class ModuleListActivity extends BaseActivity {
 
     TextView tvTitle;
     String titleName;
+    CategoryEntity.Category.Sublevel mSublevel;
     List<String> mList;
     SparseArray<String> mSArray;
     RecyclerView rvList;
-    MyAdapter mAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_module_list);
         rvList = findViewById(R.id.rv_module_list);
-        titleName = getIntent().getStringExtra(AConstants.KEY_MODULE_TITLE);
+        mSublevel = (CategoryEntity.Category.Sublevel) getIntent().getSerializableExtra(AConstants.KEY_MODULE_CONTENT);
+        titleName = mSublevel.getSublevel();
         initToolbar();
         initRVData();
         initRecyclerView();
@@ -83,20 +90,28 @@ public class ModuleListActivity extends BaseActivity {
     private void initRecyclerView(){
         //设置RecyclerView管理器
         rvList.setLayoutManager(new LinearLayoutManager(ModuleListActivity.this, LinearLayoutManager.VERTICAL, false));
-        //初始化适配器
-        mAdapter = new MyAdapter(mList);
         //设置添加或删除item时的动画，这里使用默认动画
         rvList.setItemAnimator(new DefaultItemAnimator());
-        //设置适配器
-        rvList.setAdapter(mAdapter);
-        mAdapter.setItemClickListener(new OnItemClickListener() {
+
+        BaseQuickAdapter mAdapter = new BaseQuickAdapter<DetailEntity, BaseViewHolder>(R.layout.item_java_grid, mSublevel.getData()) {
             @Override
-            public void onItemClick(int postion) {
+            protected void convert(BaseViewHolder helper, DetailEntity item) {
+                //调用赋值
+                helper.setText(R.id.tv_item, item.getTitle());
+                helper.addOnClickListener(R.id.tv_item);
+            }
+        };
+
+        mAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 Intent intent = new Intent(ModuleListActivity.this, AndroidActivity.class);
-                String url = mSArray.get(postion);
+                String url = mSublevel.getData().get(position).getUrl();
                 intent.putExtra(AConstants.URL_KEY,url);
                 startActivity(intent);
             }
         });
+        //设置适配器
+        rvList.setAdapter(mAdapter);
     }
 }

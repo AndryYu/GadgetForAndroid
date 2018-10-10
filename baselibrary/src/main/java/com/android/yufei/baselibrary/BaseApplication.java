@@ -2,7 +2,7 @@ package com.android.yufei.baselibrary;
 
 import android.app.Application;
 
-import com.android.yufei.baselibrary.common.utils.AppCrashHandler;
+import com.android.yufei.baselibrary.utils.AppCrashHandler;
 
 public class BaseApplication extends Application {
 

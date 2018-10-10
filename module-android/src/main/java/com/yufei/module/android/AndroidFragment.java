@@ -18,14 +18,17 @@ import android.widget.TextView;
 
 import com.android.yufei.baselibrary.base.BaseFragment;
 import com.android.yufei.baselibrary.base.OnItemClickListener;
+import com.android.yufei.baselibrary.utils.AssetUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.google.gson.Gson;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.android.FragmentEvent;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.yufei.module.android.common.AConstants;
+import com.yufei.module.android.entity.CategoryEntity;
 import com.yufei.module.android.ui.act.CategoryActivity;
 import com.yufei.module.android.ui.act.ModuleListActivity;
 import com.yufei.module.android.ui.adapter.MyAdapter;
@@ -43,6 +46,7 @@ public class AndroidFragment extends BaseFragment {
     SparseArray<String> mSArray;
 
     private List<String> mGridList;
+    CategoryEntity.Category entity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -98,6 +102,9 @@ public class AndroidFragment extends BaseFragment {
         mGridList.add("插件化知识梳理");
         mGridList.add("View 绘制体系知识梳理");
         mGridList.add("其他更多");
+        String category = AssetUtils.getJson(getActivity(), "android-topic.json");
+        Gson gson = new Gson();
+        entity = gson.fromJson(category, CategoryEntity.Category.class);
     }
 
     private void initGridRecyclerView(){
@@ -105,11 +112,11 @@ public class AndroidFragment extends BaseFragment {
         //设置布局的方式
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(),4);
         rvGrid.setLayoutManager(layoutManager);
-        BaseQuickAdapter gridAdapter = new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_java_grid, mGridList) {
+        BaseQuickAdapter gridAdapter = new BaseQuickAdapter<CategoryEntity.Category.Sublevel, BaseViewHolder>(R.layout.item_java_grid, entity.getContent()) {
             @Override
-            protected void convert(BaseViewHolder helper, String item) {
+            protected void convert(BaseViewHolder helper, CategoryEntity.Category.Sublevel item) {
                 //调用赋值
-                helper.setText(R.id.tv_item, item);
+                helper.setText(R.id.tv_item, item.getSublevel());
                 helper.addOnClickListener(R.id.tv_item);
             }
         };
@@ -119,7 +126,7 @@ public class AndroidFragment extends BaseFragment {
                 Intent intent = null;
                 if(position!= mGridList.size()-1) {
                     intent = new Intent(getActivity(), ModuleListActivity.class);
-                    intent.putExtra(AConstants.KEY_MODULE_TITLE, mGridList.get(position));
+                    intent.putExtra(AConstants.KEY_MODULE_CONTENT, entity.getContent().get(position));
                 }else{
                     intent = new Intent(getActivity(), CategoryActivity.class);
                 }

@@ -1,4 +1,4 @@
-package com.android.yufei.baselibrary.common.utils;
+package com.android.yufei.baselibrary.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
